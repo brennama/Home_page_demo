@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:home_page_demo/ui/app_colors.dart';
-import 'package:home_page_demo/data/home_service.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar(

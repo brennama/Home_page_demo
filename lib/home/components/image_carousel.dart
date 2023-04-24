@@ -1,13 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-final List<String> images = [
-  'https://pbs.twimg.com/media/Ft7gcUhWIAYUBcr?format=jpg&name=medium',
-  'https://pbs.twimg.com/media/FtbJ0iAXsAAWmvM?format=jpg&name=medium',
-  'https://pbs.twimg.com/media/Frs54HMXsAIue4X?format=jpg&name=medium',
-  'https://pbs.twimg.com/media/FrcID4oWIAAak7j?format=jpg&name=medium',
-  'https://pbs.twimg.com/media/Fp6TcOCX0AA-PKr?format=jpg&name=medium',
-];
+import 'package:home_page_demo/data/data.dart';
 
 class ImageCarousel extends StatefulWidget {
   const ImageCarousel({super.key, required this.images});

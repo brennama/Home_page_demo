@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:home_page_demo/ui/app_colors.dart';
-
-class CompanyStocks {
-  String name;
-  String description;
-  String image;
-
-  CompanyStocks({
-    required this.name,
-    required this.description,
-    required this.image,
-  });
-}
+import 'package:home_page_demo/data/data.dart';
 
 class CategoryBuilder extends StatefulWidget {
   const CategoryBuilder({super.key, required this.items});
@@ -25,29 +14,6 @@ class CategoryBuilder extends StatefulWidget {
 class _CategoryBuilderState extends State<CategoryBuilder> {
   @override
   Widget build(BuildContext context) {
-    List stocksList = [
-      CompanyStocks(
-        name: "Economy",
-        description:
-            'Select the vehicle size and price that fits your comfort level.',
-        image:
-            'https://crdms.images.consumerreports.org/c_scale,f_auto,h_250,w_355/prod/cars/cr/car-groups/105-11330-hero',
-      ),
-      CompanyStocks(
-        name: "Taxicab",
-        description:
-            'Support your local cab company with an opportunity to serve you.',
-        image:
-            'https://c8.alamy.com/comp/HTMCK1/yellow-taxi-isolated-on-white-background-3d-render-HTMCK1.jpg',
-      ),
-      CompanyStocks(
-        name: "Luxury",
-        description:
-            'Support your local cab company with an opportunity to serve you.',
-        image:
-            'https://www.carlelo.com/laravel/public/uploads/model/1647694717.webp',
-      ),
-    ];
     return Column(
       children: [
         Padding(
@@ -132,7 +98,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
         SizedBox(
           height: 225.0,
           child: ListView.builder(
-            itemCount: stocksList.length,
+            itemCount: categoryList.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -159,13 +125,13 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                stocksList[index].name,
+                                categoryList[index].name,
                                 textAlign: TextAlign.left,
                                 style: const TextStyle(color: Colors.black87),
                               ),
                               Flexible(
                                 child: Text(
-                                  stocksList[index].description,
+                                  categoryList[index].description,
                                   style: const TextStyle(
                                       fontSize: 10, color: Colors.grey),
                                 ),
@@ -195,7 +161,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                               child: ClipRRect(
                                 // borderRadius: BorderRadius.circular(50),
                                 child: Image.network(
-                                  stocksList[index].image,
+                                  categoryList[index].image,
                                   width: 50.0,
                                   height: 70.0,
                                   fit: BoxFit.cover,

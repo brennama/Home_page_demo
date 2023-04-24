@@ -6,6 +6,7 @@ import 'package:home_page_demo/ui/app_colors.dart';
 import 'components/custom_appbar.dart';
 import 'components/custom_navigation_bar.dart';
 import 'components/headline.dart';
+import 'package:home_page_demo/data/data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -23,19 +24,18 @@ class HomeScreen extends StatelessWidget {
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyrjEuVeGE0ljpxJyXpqWxd6N1vOpS9aTG7A&usqp=CAU',
             cartItemCount: 4,
           ),
-          const ImageCarousel(images: [
-            'https://pbs.twimg.com/media/Ft7gcUhWIAYUBcr?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/FtbJ0iAXsAAWmvM?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/Frs54HMXsAIue4X?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/FrcID4oWIAAak7j?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/Fp6TcOCX0AA-PKr?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/FpqUyOFWIAEvV5F?format=jpg&name=medium',
-          ]),
-          Headline(),
+          ImageCarousel(images: images),
+          const Headline(
+            headline: headline,
+          ),
           const CategoryBuilder(
             items: [],
           ),
-          OfferBanner(),
+          const OfferBanner(
+            image: 'assets/images/badge.png',
+            headline: 'GET 10% FOR 1ST ORDER',
+            subtitle: 'On All Stores',
+          ),
         ],
       ),
       bottomNavigationBar: const CustomNavigationBar(),

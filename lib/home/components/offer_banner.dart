@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:home_page_demo/ui/app_colors.dart';
 
 class OfferBanner extends StatelessWidget {
-  OfferBanner({Key? key}) : super(key: key);
+  const OfferBanner(
+      {super.key,
+      required this.image,
+      required this.headline,
+      required this.subtitle});
+
+  final String image;
+  final String headline;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +47,7 @@ class OfferBanner extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
                   child: Image.asset(
-                    'assets/images/badge.png',
+                    image,
                     width: 15.0,
                     height: 15.0,
                   ),
@@ -51,22 +59,22 @@ class OfferBanner extends StatelessWidget {
             left: 91.0,
             top: 20.0,
             child: Column(
-              children: const [
+              children: [
                 Text(
-                  'GET 10% FOR 1ST ORDER',
-                  style: TextStyle(
+                  headline,
+                  style: const TextStyle(
                       color: AppColors.blueSecondaryColor,
                       fontWeight: FontWeight.w600,
                       fontSize: 14.0),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     right: 113.0,
                     top: 2.0,
                   ),
                   child: Text(
-                    'On All Stores',
-                    style: TextStyle(
+                    subtitle,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 10.0,
                     ),

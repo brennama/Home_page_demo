@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Headline extends StatelessWidget {
-  Headline({Key? key}) : super(key: key);
+  const Headline({super.key, required this.headline});
+  final String headline;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 15, right: 50.0),
+    return Padding(
+      padding: const EdgeInsets.only(top: 15, right: 50.0),
       child: Text(
-        'What would you like to order today?',
-        style: TextStyle(fontSize: 16.0),
+        headline,
+        style: const TextStyle(fontSize: 16.0),
       ),
     );
   }
